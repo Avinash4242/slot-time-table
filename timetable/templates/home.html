@@ -1,0 +1,49 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Time Slot Booking</title>
+</head>
+
+<body>
+
+    <h1>Time Slot Booking System</h1>
+
+    {% if error %}
+        <p style="color:red;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        {% csrf_token %}
+
+        <label>Name:</label>
+        <input type="text" name="name" required>
+        <br><br>
+
+        <label>Email:</label>
+        <input type="email" name="email" required>
+        <br><br>
+
+        <label>Date:</label>
+        <input type="date" name="date" required>
+        <br><br>
+
+        <label>Time Slot:</label>
+
+        <select name="time_slot" required>
+            <option value="09:00 AM">09:00 AM</option>
+            <option value="10:00 AM">10:00 AM</option>
+            <option value="11:00 AM">11:00 AM</option>
+            <option value="12:00 PM">12:00 PM</option>
+            <option value="02:00 PM">02:00 PM</option>
+            <option value="03:00 PM">03:00 PM</option>
+        </select>
+
+        <br><br>
+
+        <button type="submit">Book Now</button>
+
+    </form>
+
+</body>
+</html>
